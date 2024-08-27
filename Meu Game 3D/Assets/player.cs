@@ -6,7 +6,7 @@ public class player : MonoBehaviour
 {
     public int velocidade = 10;
 
-    private Rigibdbody rb;+.
+    private Rigibdbody rb;+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +26,15 @@ public class player : MonoBehaviour
 
         
 }
+
+internal class Rigibdbody
+{
+    public void AddForce(Vector3 deltaTime, ForceMode impulse)
+    {
+        throw new System.NotImplementedException();
+    }
+}
+
 
 
 
