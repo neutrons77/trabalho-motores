@@ -17,7 +17,9 @@ public class CameraFolow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = alvo.position - offset;
+
+
     }
 }
 
