@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -20,14 +21,22 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         Debug.Log("UPDATE");
-        float h = input.GetAxis("Horizontal"); //-1 esquerda, 0 nada, 1 direita
-        float v = input.GetAxis("Vertical"); //-1 pra tras, 0 nada, 1 pra frente
+        float h = Input.GetAxis("Horizontal"); //-1 esquerda, 0 nada, 1 direita
+        float v = Input.GetAxis("Vertical"); //-1 pra tras, 0 nada, 1 pra frente
 
-        vector3 direcao = new vector3(h, 0, v);
-        rb.AddForce(direcao * velocidade * Time.deltaTime, ForceMode.Impulse);
+        Vector3 direcao = new Vector3(h, 0, v);
+        rb.AddForce(direcao * velocidade *Time.deltaTime, ForceMode.Impulse );
+
+        if (transform.position.y <= -10) 
+        {
+            //jogador caiu
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
 
 
+
+        }
+        
 
     }
 }
