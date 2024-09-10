@@ -20,7 +20,10 @@ public class Moeda : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        throw new NotImplementedException();
+        if (other.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 
 
